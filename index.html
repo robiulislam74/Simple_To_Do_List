@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo_List_Projects</title>
+    <script src="https://kit.fontawesome.com/588b7137ba.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <section class="space-y-6">
+    <div class="grid flex-col justify-center mt-12 gap-y-6">
+        <div class="flex items-center gap-x-3">
+            <h2 class="text-4xl font-extrabold ">To Do List</h2>
+            <i class="fa-solid fa-hand text-3xl text-yellow-500"></i>
+            <i class="fa-solid fa-book-open-reader text-3xl text-blue-600"></i>
+        </div>
+        <!-- Button Here -->
+        <div class="flex gap-x-4">
+            <input
+            id="text_input"
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered input-success w-full max-w-xs" />
+                <button id="add_btn" class="btn btn-outline btn-success">Add Task</button>
+                 <!-- clear button -->
+                <div class="flex justify-center">
+                    <button id="clearAll_btn" class="btn btn-active btn-secondary">Clear All</button>
+                </div>
+        </div>
+       </div>
+        <!-- row here -->
+      <div id="write_container" class="w-5/12 mx-auto space-y-6 relative">
+        <div class="flex justify-between text-gray-500 underline font-semibold">
+            <p>Number</p>
+            <p>Description</p>
+            <p>Action</p>
+         </div>
+         <!-- writing row 1 -->
+        <!-- <div class="flex justify-between items-center">
+            <h5>1</h5>
+            <h5 class="w-2/4">Description write here take input text fdd dfd dfd fd ddfd d dfdfdf</h5>
+            <button class="btn btn-sm btn-error">Delete</button>
+         </div> -->
+         <div id="newAdding_box" class="space-y-6">
+
+         </div>
+      </div>
+      
+   </section>
+   <!-- Script File added -->
+    <script src="./script.js"></script>
+</body>
+</html>
