@@ -1,4 +1,3 @@
-
 let sum = 0;
 document.querySelector('#add_btn').addEventListener('click',function(){
     const input = document.querySelector('#text_input')
@@ -6,6 +5,7 @@ document.querySelector('#add_btn').addEventListener('click',function(){
 
     const mainTopContainer = document.querySelector('#write_container')
     const divContainer = document.querySelector('#newAdding_box')
+    const btnBox = document.querySelector('#btn_box')
     const divCreate = document.createElement('div')
     divCreate.setAttribute('class','flex justify-between items-center')
     // divCreate.innerHTML=`
@@ -16,15 +16,25 @@ document.querySelector('#add_btn').addEventListener('click',function(){
     //      </div>
     // `
     // divContainer.appendChild(divCreate)
-
     const countNumber = document.createElement('h5')
     countNumber.innerText = sum;
     const description = document.createElement('p')
     description.innerText = input.value;
     description.setAttribute('class','w-2/4')
+    // delete button create
     const deleteBtn = document.createElement('button')
     deleteBtn.innerText = "Delete";
     deleteBtn.setAttribute('class','btn btn-sm btn-error')
+    
+    const clearNewBtn = document.getElementById('clearAll_btn')
+    if(!clearNewBtn){
+         // clearAll button create
+        const clearButton = document.createElement('button')
+        clearButton.innerText = "Clear All"
+        clearButton.setAttribute('class','btn btn-active btn-secondary')
+        clearButton.setAttribute('id','clearAll_btn')
+        btnBox.appendChild(clearButton)
+    }
 
     const reAddingBox = document.createElement('div')
     reAddingBox.setAttribute('id','newAdding_box')
@@ -32,7 +42,6 @@ document.querySelector('#add_btn').addEventListener('click',function(){
 
     divCreate.append(countNumber,description,deleteBtn)
     divContainer.appendChild(divCreate)
-
     document.querySelector('#text_input').value = ""
 
     // item delete function here
@@ -40,11 +49,13 @@ document.querySelector('#add_btn').addEventListener('click',function(){
         divCreate.remove()
     })
      // All items delete function here
- document.querySelector('#clearAll_btn').addEventListener('click',function(){
-    const newAddingBox =  document.getElementById('newAdding_box')
-    newAddingBox.remove()
-    sum = 0;
-    mainTopContainer.append(reAddingBox)
+     const clearAllButton =  document.querySelector('#clearAll_btn');
+     clearAllButton.addEventListener('click',function(){
+        const newAddingBox =  document.getElementById('newAdding_box')
+        newAddingBox.remove()
+        clearAllButton.remove()
+        sum = 0;
+        mainTopContainer.append(reAddingBox)
  })
 
 })
